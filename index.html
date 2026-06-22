@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="x4vKpkSlwonJNjC-ff1hG6AyUiFqL3MGHffMtfN_SIU" /> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
+  <meta name="google-site-verification" content="x4vKpkSlwonJNjC-ff1hG6AyUiFqL3MGHffMtfN_SIU" />
   
   <!-- SEO Meta Tags -->
   <title>Rescue Dogs of Roxas City | Adopt, Donate, Volunteer in Capiz, Philippines</title>
@@ -15,7 +17,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Rescue Dogs of Roxas City - Adopt, Donate, Volunteer">
   <meta property="og:description" content="Rescue Dogs of Roxas City saves abused, neglected, and abandoned pets. Adopt a dog or cat. Donate via GCash 09988896554.">
-  <meta property="og:image" content="https://rescuedogsofroxascity.vercel.app/hero-image.jpg">
+  <meta property="og:image" content="https://rescuedogsofroxascity.vercel.app/images/HERO.webp">
   <meta property="og:url" content="https://rescuedogsofroxascity.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_PH">
@@ -24,6 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rescue Dogs of Roxas City - Adopt, Donate, Volunteer">
   <meta name="twitter:description" content="Rescue Dogs of Roxas City saves abused, neglected, and abandoned pets. Adopt a dog or cat. Donate via GCash 09988896554.">
+  <meta name="twitter:image" content="https://rescuedogsofroxascity.vercel.app/images/HERO.webp">
   
   <style>
     /* ===== CSS RESET & BASE ===== */
@@ -39,7 +42,7 @@
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
       line-height: 1.6;
       padding: 20px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     
@@ -73,11 +76,6 @@
       font-size: 1.1rem;
     }
     
-    .highlight {
-      color: #E8847A;
-      font-weight: 700;
-    }
-    
     /* ===== HERO BLURB ===== */
     .hero-blurb {
       background: white;
@@ -92,8 +90,30 @@
       margin-top: 0;
     }
     
-    .hero-blurb .emoji {
-      font-size: 1.2rem;
+    /* ===== HERO IMAGE ===== */
+    .hero-image {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 20px 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      background: #F5E6D3;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 500px;
+    }
+    
+    .hero-image-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #A67B6B;
+      margin-top: 8px;
+      font-style: italic;
     }
     
     /* ===== CTAs ===== */
@@ -145,6 +165,54 @@
       background: #5C9E9E;
       color: white;
       transform: translateY(-2px);
+    }
+    
+    /* ===== GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    
+    .gallery-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .gallery-item .caption {
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #3D2E24;
+      text-align: center;
+      background: white;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    
+    .gallery-item .caption .name {
+      color: #E8847A;
+      font-size: 0.85rem;
+    }
+    
+    .gallery-item .caption .emoji {
+      font-size: 0.9rem;
     }
     
     /* ===== GCASH BOX ===== */
@@ -265,7 +333,54 @@
       width: 100% !important;
     }
     
+    /* ===== TEASER NOTE ===== */
+    .teaser-note {
+      text-align: center;
+      padding: 16px 20px;
+      background: #FFF5F0;
+      border-radius: 12px;
+      border: 1px dashed #E8847A;
+      margin: 20px 0 10px 0;
+      font-size: 1rem;
+      color: #3D2E24;
+    }
+    
+    .teaser-note a {
+      color: #E8847A;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    .teaser-note a:hover {
+      text-decoration: underline;
+    }
+    
+    .teaser-note .big-emoji {
+      font-size: 1.5rem;
+    }
+    
+    /* ===== GALLERY STATS ===== */
+    .gallery-stats {
+      text-align: center;
+      padding: 12px;
+      background: #FDF8F2;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: #A67B6B;
+    }
+    
+    .gallery-stats strong {
+      color: #E8847A;
+    }
+    
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
     @media (max-width: 768px) {
       body {
         padding: 15px;
@@ -301,6 +416,15 @@
         text-align: center;
       }
       
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      
+      .gallery-item img {
+        height: 180px;
+      }
+      
       .footer .hashtags {
         font-size: 0.75rem;
       }
@@ -322,10 +446,98 @@
       p, li {
         font-size: 1rem;
       }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      
+      .gallery-item img {
+        height: 150px;
+      }
+      
+      .gallery-item .caption {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      
+      .gallery-item img {
+        height: 200px;
+      }
+    }
+    
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 20px;
+    }
+    
+    .lightbox.active {
+      display: flex;
+    }
+    
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    
+    .lightbox .close:hover {
+      color: #E8847A;
+    }
+    
+    .lightbox .caption-lightbox {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Rescue animal">
+    <div class="caption-lightbox" id="lightbox-caption">🐾 Rescue Dog of Roxas City</div>
+  </div>
 
   <!-- ===== HERO BLURB ===== -->
   <div class="hero-blurb">
@@ -333,6 +545,20 @@
     <p style="font-size: 1.2rem; color: #5C9E9E; font-weight: 600;">
       Every life matters. Every being deserves a home.
     </p>
+    
+    <!-- ===== HERO IMAGE ===== -->
+    <div class="hero-image">
+      <img 
+        src="images/HERO.webp" 
+        alt="Rescue Dogs of Roxas City - Saving abused, neglected, and abandoned pets in Roxas City, Capiz, Philippines"
+        loading="lazy"
+        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22630%22%3E%3Crect fill=%22%23FDF8F2%22 width=%221200%22 height=%22630%22/%3E%3Ctext x=%22600%22 y=%22315%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%23A67B6B%22%3E🐾 Rescue Dogs of Roxas City%3C/text%3E%3C/svg%3E'"
+      >
+    </div>
+    <p class="hero-image-caption">
+      📸 Every rescued animal is a story of hope, healing, and second chances.
+    </p>
+    
     <p>
       Rescue Dogs of Roxas City is a dedicated group of volunteers committed to 
       saving abused, neglected, and abandoned pets, as well as stray cats and dogs. 
@@ -353,6 +579,208 @@
     </div>
   </div>
 
+  <!-- ===== FULL GALLERY SECTION ===== -->
+  <div class="section" id="gallery">
+    <h2>📸 Our Rescued Animals</h2>
+    <p style="color: #5C9E9E; font-weight: 600; font-size: 1.15rem;">
+      Every photo tells a story of hope, healing, and second chances.
+    </p>
+    
+    <div class="gallery-stats">
+      🐾 <strong>30 rescued animals</strong> featured here — each one waiting for a loving home
+    </div>
+    
+    <div class="gallery-grid">
+
+      <!-- ===== 1. PRETTYGIRL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/1-PrettyGirl.webp', '🐕 PrettyGirl - Rescued and loved ❤️')">
+        <img src="images/1-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 2. PRETTYGIRL-1 ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/1-PrettyGirl-1.webp', '🐕 PrettyGirl - Happy and playful ❤️')">
+        <img src="images/1-PrettyGirl-1.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 3. PRETTYGIRL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/2-PrettyGirl.webp', '🐕 PrettyGirl - Living her best life ❤️')">
+        <img src="images/2-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 4. PRETTYGIRL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/3-PrettyGirl.webp', '🐕 PrettyGirl - Ready for adoption 🏠')">
+        <img src="images/3-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🐕🏠</div>
+      </div>
+
+      <!-- ===== 5. PRETTYGIRL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/4-PrettyGirl.webp', '🐕 PrettyGirl - Loving and playful ❤️')">
+        <img src="images/4-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 6. PRETTYGIRL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/5-PrettyGirl.webp', '🐕 PrettyGirl - Happy and healthy 🌟')">
+        <img src="images/5-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🌟❤️</div>
+      </div>
+
+      <!-- ===== 7. PRETTYGIRL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/6-PrettyGirl.webp', '🐕 PrettyGirl - Ready for a forever home 🏠')">
+        <img src="images/6-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🐕🏠</div>
+      </div>
+
+      <!-- ===== 8. MANNY ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/7-Manny.webp', '🐕 Manny - Rescued and thriving ❤️')">
+        <img src="images/7-Manny.webp" alt="Manny - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Manny</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 9. MANNY ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/8-Manny.webp', '🐕 Manny - Before and after transformation 🌟')">
+        <img src="images/8-Manny.webp" alt="Manny - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Manny</span> 🌟🔄</div>
+      </div>
+
+      <!-- ===== 10. MB ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/9-MB.webp', '🐕 MB - Rescued and loved ❤️')">
+        <img src="images/9-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">MB</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 11. MB ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/10-MB.webp', '🐕 MB - Happy and healthy 🌟')">
+        <img src="images/10-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">MB</span> 🌟❤️</div>
+      </div>
+
+      <!-- ===== 12. BUTING ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/11-Buting.webp', '🐕 Buting - Rescued and loved ❤️')">
+        <img src="images/11-Buting.webp" alt="Buting - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Buting</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 13. BUTING ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/12-Buting.webp', '🐕 Buting - Before and after transformation 🌟')">
+        <img src="images/12-Buting.webp" alt="Buting - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Buting</span> 🌟🔄</div>
+      </div>
+
+      <!-- ===== 14. THANOS ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/13-Thanos.webp', '🐕 Thanos - Rescued and thriving ❤️')">
+        <img src="images/13-Thanos.webp" alt="Thanos - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Thanos</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 15. MB ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/14-MB.webp', '🐕 MB - Happy and playful ❤️')">
+        <img src="images/14-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">MB</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 16. PRETTYGIRL (JPG) ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/15-PrettyGirl.jpg', '🐕 PrettyGirl - Loving life ❤️')">
+        <img src="images/15-PrettyGirl.jpg" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 17. PRETTYGIRL (WEBP) ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/15-PRettyGirl.webp', '🐕 PrettyGirl - Happy and healthy 🌟')">
+        <img src="images/15-PRettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PrettyGirl</span> 🌟❤️</div>
+      </div>
+
+      <!-- ===== 18. THANOS & PRETTYGIRL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/16-ThanosPrettyGirl.webp', '🐕 Thanos & PrettyGirl - Best friends forever ❤️')">
+        <img src="images/16-ThanosPrettyGirl.webp" alt="Thanos and PrettyGirl - Rescue dogs in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Thanos &amp; PrettyGirl</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 19. PG ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/17-PG.webp', '🐕 PG - Rescued and loved ❤️')">
+        <img src="images/17-PG.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PG</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 20. PG ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/18-PG.webp', '🐕 PG - Before and after transformation 🌟')">
+        <img src="images/18-PG.webp" alt="PG - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PG</span> 🌟🔄</div>
+      </div>
+
+      <!-- ===== 21. PG-1 ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/18-PG-1.webp', '🐕 PG - Ready for adoption 🏠')">
+        <img src="images/18-PG-1.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PG</span> 🐕🏠</div>
+      </div>
+
+      <!-- ===== 22. BUTING ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/19-Buting.webp', '🐕 Buting - Happy and healthy ❤️')">
+        <img src="images/19-Buting.webp" alt="Buting - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Buting</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 23. PG-1 ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/20-PG-1.webp', '🐕 PG - Ready for a forever home 🏠')">
+        <img src="images/20-PG-1.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PG</span> 🐕🏠</div>
+      </div>
+
+      <!-- ===== 24. PG ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/21-PG.webp', '🐕 PG - Loving and playful ❤️')">
+        <img src="images/21-PG.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PG</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 25. MB ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/22-MB.webp', '🐕 MB - Before and after transformation 🌟')">
+        <img src="images/22-MB.webp" alt="MB - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">MB</span> 🌟🔄</div>
+      </div>
+
+      <!-- ===== 26. BUTING ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/23-Buting.webp', '🐕 Buting - Before and after transformation 🌟')">
+        <img src="images/23-Buting.webp" alt="Buting - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Buting</span> 🌟🔄</div>
+      </div>
+
+      <!-- ===== 27. PANGAL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/24-PangAl.webp', '🐕 PangAl - Rescued and loved ❤️')">
+        <img src="images/24-PangAl.webp" alt="PangAl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PangAl</span> 🐕❤️</div>
+      </div>
+
+      <!-- ===== 28. PANGAL ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/25-PangAl.webp', '🐕 PangAl - Before and after transformation 🌟')">
+        <img src="images/25-PangAl.webp" alt="PangAl - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">PangAl</span> 🌟🔄</div>
+      </div>
+
+      <!-- ===== 29. MANNY ===== -->
+      <div class="gallery-item" onclick="openLightbox('images/26-Manny.webp', '🐕 Manny - Happy and healthy 🌟')">
+        <img src="images/26-Manny.webp" alt="Manny - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <div class="caption"><span class="name">Manny</span> 🌟❤️</div>
+      </div>
+
+    </div>
+
+    <div class="teaser-note">
+      <span class="big-emoji">📸</span> That's <strong>30 beautiful rescued souls</strong> — all waiting for loving homes!<br>
+      Want to see more? Follow us on 
+      <a href="https://www.facebook.com/rescuedogsroxascity" target="_blank">
+        Facebook → 🐾
+      </a>
+      <br>
+      <span style="font-size: 0.9rem; color: #A67B6B;">
+        💡 Click any photo to enlarge and see the love!
+      </span>
+    </div>
+  </div>
+
   <!-- ===== FACEBOOK FEED ===== -->
   <div class="fb-feed-wrapper">
     <div id="fb-root"></div>
@@ -368,7 +796,7 @@
     </div>
     <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #A67B6B;">
       <a href="https://www.facebook.com/rescuedogsroxascity" target="_blank" style="color: #5C9E9E; font-weight: 600;">
-        Follow us on Facebook for daily updates →
+        Follow us on Facebook for daily updates and more rescue stories →
       </a>
     </p>
   </div>
@@ -515,12 +943,39 @@
     </p>
   </div>
 
-  <!-- ===== FACEBOOK SDK ===== -->
+  <!-- ===== JAVASCRIPT FOR LIGHTBOX ===== -->
   <script>
-    // Optional: Log to confirm SDK loaded
-    console.log('Rescue Dogs of Roxas City loaded!');
+    // Lightbox functionality
+    function openLightbox(imageSrc, captionText) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const caption = document.getElementById('lightbox-caption');
+      
+      img.src = imageSrc;
+      caption.textContent = captionText || '🐾 Rescue Dog of Roxas City';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close lightbox with ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+    
+    console.log('🐾 Rescue Dogs of Roxas City loaded!');
+    console.log('📸 Gallery: 30 rescued animals featured');
+    console.log('👉 Visit Facebook for all rescue stories');
   </script>
   
+  <!-- ===== FACEBOOK SDK ===== -->
   <script async defer crossorigin="anonymous" 
           src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0">
   </script>
