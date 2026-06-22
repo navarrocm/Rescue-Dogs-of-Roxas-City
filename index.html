@@ -167,6 +167,61 @@
       transform: translateY(-2px);
     }
     
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      margin: 25px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 2px solid rgba(232, 132, 122, 0.2);
+      text-align: center;
+    }
+    
+    .contact-section h2 {
+      margin-top: 0;
+    }
+    
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    
+    .contact-item {
+      background: #FDF8F2;
+      padding: 15px 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(232, 132, 122, 0.15);
+      min-width: 200px;
+    }
+    
+    .contact-item .label {
+      font-size: 0.8rem;
+      color: #A67B6B;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .contact-item .value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #3D2E24;
+      margin-top: 4px;
+    }
+    
+    .contact-item .value a {
+      color: #5C9E9E;
+      text-decoration: none;
+    }
+    
+    .contact-item .value a:hover {
+      color: #E8847A;
+      text-decoration: underline;
+    }
+    
     /* ===== GALLERY ===== */
     .gallery-grid {
       display: grid;
@@ -182,6 +237,8 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      min-height: 200px;
+      position: relative;
     }
     
     .gallery-item:hover {
@@ -194,6 +251,27 @@
       height: 220px;
       object-fit: cover;
       display: block;
+      background: #F5E6D3;
+    }
+    
+    /* Fallback for images that don't load */
+    .gallery-item img.error {
+      display: none;
+    }
+    
+    .gallery-item .img-fallback {
+      display: none;
+      width: 100%;
+      height: 220px;
+      background: #F5E6D3;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #A67B6B;
+    }
+    
+    .gallery-item img.error + .img-fallback {
+      display: flex;
     }
     
     .gallery-item .caption {
@@ -402,6 +480,15 @@
         padding: 20px;
       }
       
+      .contact-details {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .contact-item {
+        min-width: auto;
+      }
+      
       .gcash-box .number {
         font-size: 1.8rem;
         word-break: break-all;
@@ -579,7 +666,43 @@
     </div>
   </div>
 
-  <!-- ===== GALLERY SECTION - HONEST VERSION ===== -->
+  <!-- ===== CONTACT US SECTION - NEW! ===== -->
+  <div class="contact-section" id="contact">
+    <h2>📬 Contact Us</h2>
+    <p style="color: #5C9E9E; font-weight: 600;">
+      We'd love to hear from you! Reach out anytime.
+    </p>
+    
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="label">📛 Name</div>
+        <div class="value">Rescue Dogs of Roxas City</div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="label">📧 Email</div>
+        <div class="value">
+          <a href="mailto:hermajesty1257@yahoo.com">hermajesty1257@yahoo.com</a>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="label">📱 Phone / GCash</div>
+        <div class="value">
+          <a href="tel:09988896554">09988896554</a>
+        </div>
+      </div>
+    </div>
+    
+    <p style="font-size: 0.95rem; color: #A67B6B; margin-top: 10px;">
+      💬 For faster responses, message us on 
+      <a href="https://www.facebook.com/rescuedogsroxascity" target="_blank" style="color: #5C9E9E; font-weight: 600;">
+        Facebook → 🐾
+      </a>
+    </p>
+  </div>
+
+  <!-- ===== GALLERY SECTION ===== -->
   <div class="section" id="gallery">
     <h2>📸 Our Rescue Family</h2>
     <p style="color: #5C9E9E; font-weight: 600; font-size: 1.15rem;">
@@ -594,175 +717,204 @@
 
       <!-- ===== 1. PRETTYGIRL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/1-PrettyGirl.webp', '🐕 PrettyGirl - A beautiful soul looking for love ❤️')">
-        <img src="images/1-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/1-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 2. PRETTYGIRL-1 ===== -->
       <div class="gallery-item" onclick="openLightbox('images/1-PrettyGirl-1.webp', '🐕 PrettyGirl - Happy and playful ❤️')">
-        <img src="images/1-PrettyGirl-1.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/1-PrettyGirl-1.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 3. PRETTYGIRL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/2-PrettyGirl.webp', '🐕 PrettyGirl - Living her best life ❤️')">
-        <img src="images/2-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/2-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 4. PRETTYGIRL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/3-PrettyGirl.webp', '🐕 PrettyGirl - Ready for adoption 🏠')">
-        <img src="images/3-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/3-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕🏠</div>
       </div>
 
       <!-- ===== 5. PRETTYGIRL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/4-PrettyGirl.webp', '🐕 PrettyGirl - Loving and playful ❤️')">
-        <img src="images/4-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/4-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 6. PRETTYGIRL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/5-PrettyGirl.webp', '🐕 PrettyGirl - Happy and healthy ❤️')">
-        <img src="images/5-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/5-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 7. PRETTYGIRL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/6-PrettyGirl.webp', '🐕 PrettyGirl - Ready for a forever home 🏠')">
-        <img src="images/6-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/6-PrettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕🏠</div>
       </div>
 
       <!-- ===== 8. MANNY ===== -->
       <div class="gallery-item" onclick="openLightbox('images/7-Manny.webp', '🐕 Manny - A survivor with a heart of gold ❤️')">
-        <img src="images/7-Manny.webp" alt="Manny - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/7-Manny.webp" alt="Manny - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Manny</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 9. MANNY ===== -->
       <div class="gallery-item" onclick="openLightbox('images/8-Manny.webp', '🐕 Manny - Before and after transformation 🌟')">
-        <img src="images/8-Manny.webp" alt="Manny - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/8-Manny.webp" alt="Manny - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Manny</span> 🌟🔄</div>
       </div>
 
       <!-- ===== 10. MB ===== -->
       <div class="gallery-item" onclick="openLightbox('images/9-MB.webp', '🐕 MB - Rescued and loved ❤️')">
-        <img src="images/9-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/9-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">MB</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 11. MB ===== -->
       <div class="gallery-item" onclick="openLightbox('images/10-MB.webp', '🐕 MB - Happy and healthy ❤️')">
-        <img src="images/10-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/10-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">MB</span> 🌟❤️</div>
       </div>
 
       <!-- ===== 12. BUTING ===== -->
       <div class="gallery-item" onclick="openLightbox('images/11-Buting.webp', '🐕 Buting - A gentle soul ❤️')">
-        <img src="images/11-Buting.webp" alt="Buting - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/11-Buting.webp" alt="Buting - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Buting</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 13. BUTING ===== -->
       <div class="gallery-item" onclick="openLightbox('images/12-Buting.webp', '🐕 Buting - Before and after transformation 🌟')">
-        <img src="images/12-Buting.webp" alt="Buting - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/12-Buting.webp" alt="Buting - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Buting</span> 🌟🔄</div>
       </div>
 
       <!-- ===== 14. THANOS ===== -->
       <div class="gallery-item" onclick="openLightbox('images/13-Thanos.webp', '🐕 Thanos - Strong and loving ❤️')">
-        <img src="images/13-Thanos.webp" alt="Thanos - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/13-Thanos.webp" alt="Thanos - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Thanos</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 15. MB ===== -->
       <div class="gallery-item" onclick="openLightbox('images/14-MB.webp', '🐕 MB - Happy and playful ❤️')">
-        <img src="images/14-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/14-MB.webp" alt="MB - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">MB</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 16. PRETTYGIRL (JPG) ===== -->
       <div class="gallery-item" onclick="openLightbox('images/15-PrettyGirl.jpg', '🐕 PrettyGirl - Loving life ❤️')">
-        <img src="images/15-PrettyGirl.jpg" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/15-PrettyGirl.jpg" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 17. PRETTYGIRL (WEBP) ===== -->
       <div class="gallery-item" onclick="openLightbox('images/15-PRettyGirl.webp', '🐕 PrettyGirl - Happy and healthy ❤️')">
-        <img src="images/15-PRettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/15-PRettyGirl.webp" alt="PrettyGirl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PrettyGirl</span> 🌟❤️</div>
       </div>
 
       <!-- ===== 18. THANOS & PRETTYGIRL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/16-ThanosPrettyGirl.webp', '🐕 Thanos & PrettyGirl - Best friends forever ❤️')">
-        <img src="images/16-ThanosPrettyGirl.webp" alt="Thanos and PrettyGirl - Rescue dogs in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/16-ThanosPrettyGirl.webp" alt="Thanos and PrettyGirl - Rescue dogs in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Thanos &amp; PrettyGirl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 19. PG ===== -->
       <div class="gallery-item" onclick="openLightbox('images/17-PG.webp', '🐕 PG - Rescued and loved ❤️')">
-        <img src="images/17-PG.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/17-PG.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PG</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 20. PG ===== -->
       <div class="gallery-item" onclick="openLightbox('images/18-PG.webp', '🐕 PG - Before and after transformation 🌟')">
-        <img src="images/18-PG.webp" alt="PG - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/18-PG.webp" alt="PG - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PG</span> 🌟🔄</div>
       </div>
 
       <!-- ===== 21. PG-1 ===== -->
       <div class="gallery-item" onclick="openLightbox('images/18-PG-1.webp', '🐕 PG - Ready for adoption 🏠')">
-        <img src="images/18-PG-1.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/18-PG-1.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PG</span> 🐕🏠</div>
       </div>
 
       <!-- ===== 22. BUTING ===== -->
       <div class="gallery-item" onclick="openLightbox('images/19-Buting.webp', '🐕 Buting - Happy and healthy ❤️')">
-        <img src="images/19-Buting.webp" alt="Buting - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/19-Buting.webp" alt="Buting - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Buting</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 23. PG-1 ===== -->
       <div class="gallery-item" onclick="openLightbox('images/20-PG-1.webp', '🐕 PG - Ready for a forever home 🏠')">
-        <img src="images/20-PG-1.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/20-PG-1.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PG</span> 🐕🏠</div>
       </div>
 
       <!-- ===== 24. PG ===== -->
       <div class="gallery-item" onclick="openLightbox('images/21-PG.webp', '🐕 PG - Loving and playful ❤️')">
-        <img src="images/21-PG.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/21-PG.webp" alt="PG - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PG</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 25. MB ===== -->
       <div class="gallery-item" onclick="openLightbox('images/22-MB.webp', '🐕 MB - Before and after transformation 🌟')">
-        <img src="images/22-MB.webp" alt="MB - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/22-MB.webp" alt="MB - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">MB</span> 🌟🔄</div>
       </div>
 
       <!-- ===== 26. BUTING ===== -->
       <div class="gallery-item" onclick="openLightbox('images/23-Buting.webp', '🐕 Buting - Before and after transformation 🌟')">
-        <img src="images/23-Buting.webp" alt="Buting - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/23-Buting.webp" alt="Buting - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Buting</span> 🌟🔄</div>
       </div>
 
       <!-- ===== 27. PANGAL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/24-PangAl.webp', '🐕 PangAl - Rescued and loved ❤️')">
-        <img src="images/24-PangAl.webp" alt="PangAl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/24-PangAl.webp" alt="PangAl - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PangAl</span> 🐕❤️</div>
       </div>
 
       <!-- ===== 28. PANGAL ===== -->
       <div class="gallery-item" onclick="openLightbox('images/25-PangAl.webp', '🐕 PangAl - Before and after transformation 🌟')">
-        <img src="images/25-PangAl.webp" alt="PangAl - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/25-PangAl.webp" alt="PangAl - Rescue dog transformation in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">PangAl</span> 🌟🔄</div>
       </div>
 
       <!-- ===== 29. MANNY ===== -->
       <div class="gallery-item" onclick="openLightbox('images/26-Manny.webp', '🐕 Manny - Happy and healthy ❤️')">
-        <img src="images/26-Manny.webp" alt="Manny - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy">
+        <img src="images/26-Manny.webp" alt="Manny - Rescue dog in Roxas City, Capiz, Philippines" loading="lazy" onerror="this.classList.add('error')">
+        <div class="img-fallback">🐕</div>
         <div class="caption"><span class="name">Manny</span> 🌟❤️</div>
       </div>
 
@@ -894,6 +1046,7 @@
     
     <div class="links">
       <a href="https://www.facebook.com/rescuedogsroxascity" target="_blank">Facebook</a>
+      <a href="#contact">Contact</a>
       <a href="#donate">Donate</a>
       <a href="#adopt">Adopt</a>
     </div>
@@ -972,6 +1125,7 @@
     
     console.log('🐾 Rescue Dogs of Roxas City loaded!');
     console.log('📸 Gallery: Our rescue family');
+    console.log('📬 Contact: hermajesty1257@yahoo.com | 09988896554');
     console.log('👉 Visit Facebook for all rescue stories');
   </script>
   
